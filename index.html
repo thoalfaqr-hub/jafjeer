@@ -125,7 +125,7 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
 const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app),st=getStorage(app);
 let R=S,ALL=[],fromDb=false,revs=[],user=null,have=new Set(),cat="الكل",cur=null,myStars=0,editing=null;
-const isAdmin=()=>!!user&&!user.isAnonymous&&user.email===ADMIN_EMAIL;
+const isAdmin = () => !!user && !user.isAnonymous && ADMIN_EMAILS.includes(user.email);
 const google=async()=>{try{await signInWithPopup(auth,new GoogleAuthProvider())}catch(e){}};
 
 function stat(id){const a=revs.filter(x=>x.rid===id);return a.length?{v:(a.reduce((s,x)=>s+x.stars,0)/a.length).toFixed(1),n:a.length}:null}
