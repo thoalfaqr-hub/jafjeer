@@ -8,8 +8,8 @@ export const firebaseConfig = {
 };
 
 export const ADMIN_EMAILS = [
-  "t****qr@gmail.com",
-  "ed***cde@gmail.com",
+  "toalfaqr@gmail.com",
+  "ede10cde@gmail.com",
   "ebaebaa1234@gmail.com"
 ];
 
