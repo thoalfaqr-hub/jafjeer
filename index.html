@@ -1,230 +1,89 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>جفجير – وصفات الطعام والمشروبات</title>
-<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#f3f6ef;--card:#fff;--ink:#1c2a24;--mute:#66756d;--line:#dbe3d6;--acc:#a3243b;--acc-ink:#fff;--sun:#e8b03a;--ok:#2f7d4f;--okbg:#e0f0e5;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141b17;--card:#1d2722;--ink:#eef2ec;--mute:#9bab a2;--mute:#9baba2;--line:#2e3b34;--acc:#e0566f;--acc-ink:#1a0a0e;--ok:#6fcf93;--okbg:#1f3a2a}}
-:root[data-theme="dark"]{--bg:#141b17;--card:#1d2722;--ink:#eef2ec;--mute:#9baba2;--line:#2e3b34;--acc:#e0566f;--acc-ink:#1a0a0e;--ok:#6fcf93;--okbg:#1f3a2a}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Tajawal,Tahoma,sans-serif}
-.wrap{max-width:760px;margin:0 auto;padding:0 16px 80px}
-header{padding:28px 0 12px}
-.logo{font:600 44px/1 'Reem Kufi',Tajawal,serif;color:var(--acc);margin:0}
-.tag{margin:6px 0 0;color:var(--mute)}
-.tabs{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:5px;margin:14px 0;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
-.tabs button{flex:1;border:0;background:none;color:var(--mute);font:700 15px Tajawal,sans-serif;padding:10px;border-radius:10px;cursor:pointer}
-.tabs button[aria-selected=true]{background:var(--acc);color:var(--acc-ink)}
-button:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
-input[type=search]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:inherit}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;font:500 14px Tajawal,sans-serif;cursor:pointer}
-.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.chip.have[aria-pressed=true]{background:var(--ok);border-color:var(--ok);color:#fff}
-.bar{display:flex;justify-content:space-between;align-items:center;color:var(--mute);font-size:14px;margin:8px 0}
-.link{background:none;border:0;color:var(--acc);font:700 14px Tajawal,sans-serif;cursor:pointer;padding:4px}
-.list{display:grid;gap:10px}
-.card{display:block;width:100%;text-align:right;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;color:var(--ink);font:inherit}
-.card:hover{border-color:var(--acc)}
-.card h3{margin:0 0 2px;font-size:18px}
-.meta{color:var(--mute);font-size:14px}
-.badge{display:inline-block;font-size:13px;font-weight:700;border-radius:8px;padding:1px 10px;margin-inline-start:8px;background:var(--okbg);color:var(--ok)}
-.badge.part{background:transparent;border:1px solid var(--line);color:var(--mute);font-weight:500}
-.miss{font-size:14px;color:var(--acc);margin-top:4px}
-.empty{text-align:center;color:var(--mute);padding:36px 0}
-.group{margin:16px 0 4px;font-weight:700;color:var(--mute);font-size:14px}
-dialog{border:0;border-radius:18px;padding:0;max-width:560px;width:calc(100% - 24px);background:var(--card);color:var(--ink);max-height:88vh}
-dialog::backdrop{background:rgba(0,0,0,.5)}
-.dl{padding:22px 22px 26px;direction:rtl}
-.dl h2{margin:0;font:600 28px 'Reem Kufi',Tajawal,serif;color:var(--acc)}
-.dl h4{margin:18px 0 6px}
-.dl ul,.dl ol{margin:0;padding-inline-start:22px}
-.dl li{margin:4px 0}
-li.no{color:var(--acc);font-weight:700}
-.star{font-size:14px;color:var(--sun);font-weight:700;margin-inline-start:8px}
-.top{display:flex;gap:8px;align-items:center}.top input{flex:1}
-.btn{border:0;border-radius:10px;background:var(--acc);color:var(--acc-ink);font:700 15px Tajawal,sans-serif;padding:10px 16px;cursor:pointer}
-.btn.ghost{background:none;border:1px solid var(--line);color:var(--ink)}
-.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-label{display:block;margin:12px 0 4px;font-weight:700;font-size:14px}
-.f{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
-.stars button{background:none;border:0;font-size:28px;color:var(--line);cursor:pointer;padding:0 2px}
-.stars button.on{color:var(--sun)}
-.rv{border-top:1px solid var(--line);padding:10px 0}
-.rv b{font-size:14px}
-.ad{margin:32px 0 0;min-height:90px;border:1px dashed var(--line);border-radius:12px;display:grid;place-items:center;color:var(--mute);font-size:13px}
-.x{float:left;font-size:22px;background:none;border:0;color:var(--mute);cursor:pointer}
-</style>
-<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#a3243b"><link rel="icon" href="icon.svg">
-</head>
-<body>
-<div class="wrap">
-<header><div class="top" style="justify-content:space-between"><h1 class="logo">جفجير</h1><div class="top" id="auth"></div></div><p class="tag">وصفات الطعام والمشروبات، وما يمكنك طبخه من مواد بيتك</p></header>
-<div class="tabs" role="tablist">
-<button role="tab" id="t1" aria-selected="true">كل الوصفات</button>
-<button role="tab" id="t2" aria-selected="false">ماذا في بيتي؟</button>
-</div>
-<section id="v1">
-<div class="top"><input type="search" id="q" placeholder="ابحث عن وصفة أو مكوّن"><button class="btn" id="add" hidden>+ وصفة</button></div>
-<div class="chips" id="cats"></div>
-<div class="list" id="res1"></div>
-</section>
-<section id="v2" hidden>
-<p class="meta" style="margin:0">اختر المواد المتوفرة لديك. الملح والبهارات والماء مفترض وجودها.</p>
-<div class="chips" id="pantry"></div>
-<div class="bar"><span id="cnt"></span><button class="link" id="clr">مسح الاختيار</button></div>
-<div id="res2" class="list"></div>
-</section>
-<!-- مساحة الإعلان: ضع هنا كود AdSense (انظر README) -->
-<div class="ad" id="adslot" aria-label="مساحة إعلانية">مساحة إعلانية</div>
-</div>
-<dialog id="dlg"><div class="dl" id="dbody"></div></dialog>
-<dialog id="fdlg"><div class="dl"><button class="x" aria-label="إغلاق" onclick="fdlg.close()">✕</button><h2 id="ftitle">وصفة جديدة</h2>
-<label for="fn">اسم الوصفة</label><input class="f" id="fn">
-<label for="fc">النوع</label><select class="f" id="fc"></select>
-<label for="ft">وقت التحضير بالدقائق</label><input class="f" id="ft" type="number" min="1">
-<label for="fi">المكونات (واحد في كل سطر)</label><textarea class="f" id="fi" rows="5"></textarea>
-<label for="fs">الخطوات (واحدة في كل سطر)</label><textarea class="f" id="fs" rows="5"></textarea>
-<label for="fimg">صورة (اختياري)</label><input class="f" id="fimg" type="file" accept="image/*">
-<label for="fvid">فيديو (اختياري)</label><input class="f" id="fvid" type="file" accept="video/*">
-<label for="fy">رابط يوتيوب (اختياري)</label><input class="f" id="fy" type="url" placeholder="https://youtube.com/watch?v=...">
-<div class="row"><button class="btn" id="fsave">حفظ الوصفة</button><button class="btn ghost" onclick="fdlg.close()">إلغاء</button></div><p class="miss" id="ferr"></p></div></dialog>
-<script type="module">
-import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import {getAuth,GoogleAuthProvider,signInWithPopup,signInAnonymously,onAuthStateChanged,signOut} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import {getFirestore,collection,doc,setDoc,deleteDoc,onSnapshot,writeBatch} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import {getStorage,ref,uploadBytes,getDownloadURL} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
-import {firebaseConfig,_EMAIL} from "./firebase-config.js";
-const S=[
-["كباب مشوي","مشويات",30,["لحم مفروم","بصل","ثوم"],"افرم البصل والثوم ناعماً وامزجهما مع اللحم والملح والبهارات|اعجن جيداً ثم شكّله على أسياخ|اشوِه على الفحم أو في الفرن 8 دقائق من كل جهة"],
-["تكة دجاج","مشويات",45,["دجاج","لبن","ثوم","ليمون"],"قطّع الدجاج مكعبات|تبّله باللبن والثوم وعصير الليمون والبهارات ساعة|اشوِه على أسياخ حتى ينضج ويحمرّ"],
-["شاورما دجاج","ساندويج",35,["دجاج","خبز","ثوم","ليمون","خيار"],"قطّع الدجاج شرائح وتبّله بالليمون والثوم والبهارات|اقلِه في مقلاة ساخنة حتى ينضج|احشُ به الخبز مع شرائح الخيار والثوم"],
-["ساندويج بيض وجبن","ساندويج",10,["بيض","جبن","خبز"],"اخفق البيض واطبخه في مقلاة|أضف الجبن حتى يذوب|ضعه داخل الخبز المحمّص"],
-["فلافل","ساندويج",40,["حمص","بصل","ثوم","خبز"],"انقع الحمص ليلة كاملة ثم افرمه مع البصل والثوم والبهارات|شكّله أقراصاً واقلِه في زيت ساخن|قدّمه في الخبز مع الطماطم والمخلل"],
-["برجر منزلي","ساندويج",25,["لحم مفروم","خبز","بصل","طماطم","جبن"],"شكّل اللحم المتبّل أقراصاً واشوِها 4 دقائق لكل جهة|ضع الجبن لتذوب|ركّب البرجر بين الخبز مع البصل والطماطم"],
-["برياني دجاج","أرز",60,["رز","دجاج","بصل","طماطم"],"احمّر البصل ثم أضف الدجاج والطماطم والبهارات|أضف الرز المنقوع وماءً بضعف حجمه|اترك على نار هادئة 20 دقيقة"],
-["تمن ومرق باذنجان","أرز",70,["رز","باذنجان","طماطم","لحم","بصل"],"اسلق الرز وأنضجه على البخار (التمن)|اطبخ اللحم مع البصل ثم أضف الطماطم والباذنجان المقلي|اتركه يغلي هادئاً 30 دقيقة وقدّمه فوق الرز"],
-["رز بالحليب","حلويات",30,["رز","حليب","سكر"],"اسلق الرز قليلاً في الماء|أضف الحليب وقلّب على نار هادئة حتى يثخن|حلّه بالسكر وزيّنه بالقرفة"],
-["شوربة عدس","أطباق",35,["عدس","بصل","جزر","ليمون"],"قلّب البصل والجزر في الزيت|أضف العدس وماءً وبهارات واتركها تنضج 25 دقيقة|اهرسها وقدّمها مع الليمون"],
-["معكرونة بالطماطم","أطباق",20,["معكرونة","طماطم","ثوم"],"اسلق المعكرونة|حمّر الثوم ثم أضف الطماطم المفرومة واطبخها 10 دقائق|اخلط الصلصة بالمعكرونة"],
-["بطاطا مقلية","أطباق",20,["بطاطا","زيت"],"قشّر البطاطا وقطّعها أصابع واغسلها وجففها|اقلِها في زيت ساخن حتى تذهب|رشّ عليها الملح"],
-["كليجة","حلويات",50,["طحين","سكر","زيت","بيض"],"اخلط الطحين والزيت والبيض والسكر واعجن|شكّلها أقراصاً صغيرة|اخبزها على 180° حتى تحمرّ"],
-["فطائر الجبن","حلويات",45,["طحين","جبن","بيض","حليب"],"اعجن الطحين بالحليب والبيض|افرده واحشُه بالجبن واثنِه|اخبزه حتى يحمرّ"],
-["عصير ليمون بالنعناع","مشروبات",5,["ليمون","سكر","نعناع"],"اعصر الليمون|اخلطه بالسكر وأوراق النعناع وماء بارد|قدّمه مع الثلج"],
-["شاي عراقي بالهيل","مشروبات",10,["شاي","هيل","سكر"],"اغلِ الماء في إبريق|ضع الشاي والهيل ودعه يتخمّر على نار هادئة 5 دقائق|صفّه وقدّمه مع السكر"],
-["عيران بالنعناع","مشروبات",5,["لبن","نعناع"],"اخلط اللبن بماء بارد بنسبة 1 إلى 1|أضف النعناع المجفف والملح|قدّمه باردا"],
-["سموذي الموز","مشروبات",5,["موز","حليب"],"ضع الموز والحليب والثلج في الخلاط|اخلط حتى يصبح ناعماً|قدّمه فوراً"]
-].map((r,i)=>({id:"b"+i,n:r[0],c:r[1],t:r[2],i:r[3],s:r[4].split("|")}));
-const CATS=["الكل","مشويات","ساندويج","أرز","أطباق","حلويات","مشروبات"];
-const $=id=>document.getElementById(id);
-const esc=s=>String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
-const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app),st=getStorage(app);
-let R=S,ALL=[],fromDb=false,revs=[],user=null,have=new Set(),cat="الكل",cur=null,myStars=0,editing=null;
-const isAdmin = () => !!user && !user.isAnonymous && ADMIN_EMAILS.includes(user.email);
-const google=async()=>{try{await signInWithPopup(auth,new GoogleAuthProvider())}catch(e){}};
-function stat(id){const a=revs.filter(x=>x.rid===id);return a.length?{v:(a.reduce((s,x)=>s+x.stars,0)/a.length).toFixed(1),n:a.length}:null}
-function chips(el,items,on,cls,fn){el.innerHTML="";items.forEach(x=>{const b=document.createElement("button");b.className="chip "+(cls||"");b.textContent=x;b.setAttribute("aria-pressed",on(x));b.onclick=()=>fn(x);el.appendChild(b)})}
-function card(r,x){const s=stat(r.id);return `<button class="card" data-id="${esc(r.id)}"><h3>${esc(r.n)}${x?.badge||""}${s?`<span class="star">★ ${s.v} (${s.n})</span>`:""}</h3><div class="meta">${esc(r.c)} • ${r.t} دقيقة</div>${x?.miss||""}</button>`}
-function bind(el){el.querySelectorAll(".card").forEach(c=>c.onclick=()=>open(c.dataset.id))}
-function ui(){
- const g=user&&!user.isAnonymous;
- $("auth").innerHTML=g?`<span class="meta">${esc(user.displayName||user.email)}</span><button class="link" id="gout">خروج</button>`:`<button class="btn ghost" id="gin">دخول بجوجل</button>`;
- if($("gin"))$("gin").onclick=google;
- if($("gout"))$("gout").onclick=()=>signOut(auth);
- $("add").hidden=!isAdmin();
-}
-function r1(){
- chips($("cats"),CATS,x=>x===cat,"",x=>{cat=x;r1()});
- const q=$("q").value.trim();
- const L=R.filter(r=>(cat==="الكل"||r.c===cat)&&(!q||r.n.includes(q)||r.i.some(i=>i.includes(q))));
- $("res1").innerHTML=L.length?L.map(r=>card(r)).join(""):'<div class="empty">لا توجد وصفة مطابقة. جرّب كلمة أخرى.</div>';
- bind($("res1"));
-}
-function r2(){
- chips($("pantry"),ALL,x=>have.has(x),"have",x=>{have.has(x)?have.delete(x):have.add(x);r2()});
- $("cnt").textContent=have.size?`اخترت ${have.size} من المواد`:"";
- const out=$("res2");
- if(!have.size){out.innerHTML='<div class="empty">اختر مادة واحدة على الأقل لتظهر الوجبات.</div>';return}
- const L=R.map(r=>({r,m:r.i.filter(i=>!have.has(i))})).filter(x=>x.m.length<x.r.i.length).sort((a,b)=>a.m.length-b.m.length||a.r.t-b.r.t);
- if(!L.length){out.innerHTML='<div class="empty">لا توجد وصفات بهذه المواد. أضف مواد أخرى.</div>';return}
- const ready=L.filter(x=>!x.m.length),part=L.filter(x=>x.m.length);let h="";
- if(ready.length)h+=`<div class="group">يمكنك طبخها الآن (${ready.length})</div>`+ready.map(x=>card(x.r,{badge:'<span class="badge">جاهزة</span>'})).join("");
- if(part.length)h+=`<div class="group">تنقصها مادة أو أكثر</div>`+part.map(x=>card(x.r,{badge:`<span class="badge part">${x.r.i.length-x.m.length}/${x.r.i.length}</span>`,miss:`<div class="miss">ينقصك: ${x.m.map(esc).join("، ")}</div>`})).join("");
- out.innerHTML=h;bind(out);
-}
-function refresh(){ALL=[...new Set(R.flatMap(r=>r.i))].sort((a,b)=>a.localeCompare(b,"ar"));ui();$("v1").hidden?r2():r1();if($("dlg").open&&cur)open(cur,1)}
-const ytId=u=>{const m=(u||"").match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/);return m?m[1]:null};
-function media(r){let h="";const m="width:100%;border-radius:12px;margin-top:12px";
- if(r.img)h+=`<img src="${esc(r.img)}" alt="" style="${m}">`;
- if(r.vid)h+=`<video controls playsinline src="${esc(r.vid)}" style="${m}"></video>`;
- const y=ytId(r.yt);if(y)h+=`<iframe src="https://www.youtube-nocookie.com/embed/${y}" allowfullscreen loading="lazy" style="${m};aspect-ratio:16/9;border:0"></iframe>`;return h}
-function open(id,keep){
- const r=R.find(x=>x.id===id);if(!r){$("dlg").close();return}
- cur=id;const uid=user?.uid,mine=revs.find(x=>x.uid===uid&&x.rid===id);
- if(!keep)myStars=mine?mine.stars:0;
- const s=stat(id),list=revs.filter(x=>x.rid===id).sort((a,b)=>b.ts-a.ts);
- const draft=keep&&$("rt")?$("rt").value:(mine?.text||""),nm=keep&&$("rn")?$("rn").value:"";
- const guest=!user||user.isAnonymous;
- $("dbody").innerHTML=`<button class="x" aria-label="إغلاق" onclick="dlg.close()">✕</button><h2>${esc(r.n)}</h2><div class="meta">${esc(r.c)} • ${r.t} دقيقة${s?` • ★ ${s.v} من ${s.n} تقييم`:""}</div>${media(r)}
- <h4>المكونات</h4><ul>${r.i.map(i=>`<li class="${have.size&&!have.has(i)?"no":""}">${esc(i)}${have.size&&!have.has(i)?" (غير متوفر)":""}</li>`).join("")}<li>ملح وبهارات حسب الرغبة</li></ul>
- <h4>طريقة التحضير</h4><ol>${r.s.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>
- ${isAdmin()?`<div class="row"><button class="btn ghost" id="ed">تعديل</button><button class="btn ghost" id="dl2">حذف</button></div>`:""}
- <h4>التقييمات والتعليقات</h4>
- <div class="stars" id="st">${[1,2,3,4,5].map(n=>`<button aria-label="${n}" data-n="${n}" class="${n<=myStars?"on":""}">★</button>`).join("")}</div>
- ${guest?`<input class="f" id="rn" maxlength="40" placeholder="اسمك (اختياري)" value="${esc(nm)}" style="margin-bottom:8px">`:""}
- <textarea class="f" id="rt" rows="2" maxlength="500" placeholder="اكتب تعليقك">${esc(draft)}</textarea>
- <div class="row"><button class="btn" id="rs">${mine?"تحديث تقييمي":"إرسال التقييم"}</button>${guest?'<button class="btn ghost" id="rg">أو سجّل بجوجل</button>':""}</div><p class="miss" id="rerr"></p>
- ${list.length?list.map(x=>`<div class="rv"><b>${esc(x.name||"زائر")}</b> <span class="star">${"★".repeat(x.stars)}</span>${isAdmin()||x.uid===uid?` <button class="link" data-del="${esc(x.id)}">حذف</button>`:""}<div>${esc(x.text)}</div></div>`).join(""):'<p class="meta">لا توجد تقييمات بعد. كن أول من يقيّم.</p>'}`;
- if(!$("dlg").open)$("dlg").showModal();
- document.querySelectorAll("#st button").forEach(b=>b.onclick=()=>{myStars=+b.dataset.n;document.querySelectorAll("#st button").forEach(x=>x.classList.toggle("on",+x.dataset.n<=myStars))});
- document.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>deleteDoc(doc(db,"reviews",b.dataset.del)));
- if($("rg"))$("rg").onclick=google;
- $("rs").onclick=async()=>{
-  if(!myStars){$("rerr").textContent="اختر عدد النجوم أولاً.";return}
-  try{
-   const u=auth.currentUser||(await signInAnonymously(auth)).user;
-   const name=($("rn")?.value.trim()||u.displayName||"زائر").slice(0,40);
-   await setDoc(doc(db,"reviews",id+"_"+u.uid),{rid:id,uid:u.uid,name,stars:myStars,text:$("rt").value.trim().slice(0,500),ts:Date.now()});
-  }catch(e){$("rerr").textContent="تعذّر الإرسال. حاول مرة أخرى."}
- };
- if($("ed"))$("ed").onclick=()=>form(r);
- if($("dl2"))$("dl2").onclick=async()=>{if(!confirm("حذف هذه الوصفة؟"))return;try{await seed();await deleteDoc(doc(db,"recipes",id));$("dlg").close()}catch(e){alert("تعذّر الحذف.")}};
-}
-async function seed(){if(fromDb)return;const b=writeBatch(db);S.forEach((r,i)=>b.set(doc(db,"recipes",r.id),{n:r.n,c:r.c,t:r.t,i:r.i,s:r.s,ord:i}));await b.commit()}
-function form(r){
- editing=r?r.id:"u"+Date.now().toString(36);
- $("ftitle").textContent=r?"تعديل الوصفة":"وصفة جديدة";
- $("fc").innerHTML=CATS.slice(1).map(c=>`<option ${r&&r.c===c?"selected":""}>${c}</option>`).join("");
- $("fn").value=r?r.n:"";$("ft").value=r?r.t:"";$("fi").value=r?r.i.join("\n"):"";$("fs").value=r?r.s.join("\n"):"";
- $("fy").value=r?.yt||"";$("fimg").value="";$("fvid").value="";$("ferr").textContent="";
- $("dlg").close();$("fdlg").showModal();
-}
-$("add").onclick=()=>form(null);
-$("fsave").onclick=async()=>{
- const L=t=>t.split("\n").map(x=>x.trim()).filter(Boolean);
- const d={n:$("fn").value.trim(),c:$("fc").value,t:+$("ft").value||15,i:L($("fi").value),s:L($("fs").value),yt:$("fy").value.trim()};
- if(!d.n||!d.i.length||!d.s.length){$("ferr").textContent="أدخل الاسم ومكوّناً واحداً وخطوة واحدة على الأقل.";return}
- const up=async(inp,k)=>{const f=$(inp).files[0];if(!f)return null;const x=ref(st,`media/${editing}/${k}-${Date.now()}`);await uploadBytes(x,f);return getDownloadURL(x)};
- try{
-  $("ferr").textContent="جارٍ الحفظ...";
-  const prev=R.find(x=>x.id===editing)||{};
-  d.img=(await up("fimg","img"))||prev.img||"";d.vid=(await up("fvid","vid"))||prev.vid||"";d.ord=prev.ord??Date.now();
-  await seed();await setDoc(doc(db,"recipes",editing),d);$("fdlg").close();
- }catch(e){$("ferr").textContent="تعذّر الحفظ. تأكد من أنك الأدمن."}
-};
-function tab(n){$("v1").hidden=n!==1;$("v2").hidden=n!==2;$("t1").setAttribute("aria-selected",n===1);$("t2").setAttribute("aria-selected",n===2);n===1?r1():r2()}
-$("t1").onclick=()=>tab(1);$("t2").onclick=()=>tab(2);
-$("q").oninput=r1;$("clr").onclick=()=>{have.clear();r2()};
-$("dlg").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
-onSnapshot(collection(db,"recipes"),s=>{const a=s.docs.map(d=>({id:d.id,...d.data()}));fromDb=a.length>0;R=fromDb?a.sort((x,y)=>(x.ord??0)-(y.ord??0)):S;refresh()});
-onSnapshot(collection(db,"reviews"),s=>{revs=s.docs.map(d=>({id:d.id,...d.data()}));refresh()});
-onAuthStateChanged(auth,u=>{user=u;refresh()});
-refresh();
-</script>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/13.3.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/13.3.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/13.3.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/13.3.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/13.3.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/13.3.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/13.3.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/13.3.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/13.3.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/13.3.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
 </html>
