@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{d}/documents {
+    function admin() {
+      return request.auth != null
+        && request.auth.token.email == 'your@gmail.com'
+        && request.auth.token.email_verified == true;
+    }
+    match /recipes/{id} {
+      allow read: if true;
+      allow write: if admin();
+    }
+    match /reviews/{id} {
+      allow read: if true;
+      allow create, update: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && id == request.resource.data.rid + '_' + request.auth.uid
+        && request.resource.data.stars is int
+        && request.resource.data.stars >= 1 && request.resource.data.stars <= 5
+        && request.resource.data.text.size() <= 500
+        && request.resource.data.name.size() <= 40;
+      allow delete: if admin() || (request.auth != null && resource.data.uid == request.auth.uid);
+    }
+  }
+}
