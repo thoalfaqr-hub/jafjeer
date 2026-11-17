@@ -1,4 +1,3 @@
-// الصق هنا إعدادات مشروعك من Firebase Console > Project settings > Your apps > Web app
 export const firebaseConfig = {
   apiKey: "AIzaSyD0bApU7vGnywXQvow-lT0kU6LCCuPfwfU",
   authDomain: "jafjeer-3740f.firebaseapp.com",
