@@ -99,7 +99,7 @@ import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase
 import {getAuth,GoogleAuthProvider,signInWithPopup,signInAnonymously,onAuthStateChanged,signOut} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {getFirestore,collection,doc,setDoc,deleteDoc,onSnapshot,writeBatch} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import {getStorage,ref,uploadBytes,getDownloadURL} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
-import {firebaseConfig,ADMIN_EMAIL} from "./firebase-config.js";
+import {firebaseConfig,_EMAIL} from "./firebase-config.js";
 const S=[
 ["كباب مشوي","مشويات",30,["لحم مفروم","بصل","ثوم"],"افرم البصل والثوم ناعماً وامزجهما مع اللحم والملح والبهارات|اعجن جيداً ثم شكّله على أسياخ|اشوِه على الفحم أو في الفرن 8 دقائق من كل جهة"],
 ["تكة دجاج","مشويات",45,["دجاج","لبن","ثوم","ليمون"],"قطّع الدجاج مكعبات|تبّله باللبن والثوم وعصير الليمون والبهارات ساعة|اشوِه على أسياخ حتى ينضج ويحمرّ"],
@@ -127,7 +127,6 @@ const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app),s
 let R=S,ALL=[],fromDb=false,revs=[],user=null,have=new Set(),cat="الكل",cur=null,myStars=0,editing=null;
 const isAdmin = () => !!user && !user.isAnonymous && ADMIN_EMAILS.includes(user.email);
 const google=async()=>{try{await signInWithPopup(auth,new GoogleAuthProvider())}catch(e){}};
-
 function stat(id){const a=revs.filter(x=>x.rid===id);return a.length?{v:(a.reduce((s,x)=>s+x.stars,0)/a.length).toFixed(1),n:a.length}:null}
 function chips(el,items,on,cls,fn){el.innerHTML="";items.forEach(x=>{const b=document.createElement("button");b.className="chip "+(cls||"");b.textContent=x;b.setAttribute("aria-pressed",on(x));b.onclick=()=>fn(x);el.appendChild(b)})}
 function card(r,x){const s=stat(r.id);return `<button class="card" data-id="${esc(r.id)}"><h3>${esc(r.n)}${x?.badge||""}${s?`<span class="star">★ ${s.v} (${s.n})</span>`:""}</h3><div class="meta">${esc(r.c)} • ${r.t} دقيقة</div>${x?.miss||""}</button>`}
