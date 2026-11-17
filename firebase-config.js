@@ -6,9 +6,11 @@ export const firebaseConfig = {
   messagingSenderId: "946769526108",
   appId: "1:946769526108:web:1758919d9e094e3f3b9599"
 };
-// بريد جوجل الخاص بالأدمن (الوحيد الذي يضيف ويعدّل الوصفات)
+
 export const ADMIN_EMAILS = [
-  "t****qr@gmail.com",
-  "ed***cde@gmail.com",
-"ebaebaa1234@gmail.com"
+  "t****qr@gmail.com",
+  "ed***cde@gmail.com",
+  "ebaebaa1234@gmail.com"
 ];
+
+export const ADMIN_EMAIL = ADMIN_EMAILS;
